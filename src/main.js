@@ -1,8 +1,53 @@
+import { Icon }  from 'leaflet'
+import 'leaflet/dist/leaflet.css'
+
+import './scss/main.scss';
+
 import Vue from 'vue'
 import App from './App.vue'
+import Router from 'vue-router'
+
+import About from './pages/about'
+import Dash from './pages/dash'
+import Login from './pages/login'
+import Discover from './pages/discover'
+
+Vue.use(Router);
+
+const routes = [
+  {path: '/', component: Dash},
+  {path: '/discover', component: Discover},
+  {path: '/about', component: About},
+  {path: '/login', component: Login}
+];
+
+const router = new Router ({routes: routes})
+
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    if (!authStore.state.user) {
+      next('Login');
+    } else {
+      next();
+    }
+  } else {
+    next();
+  }
+
+});
+
+// this part resolve an issue where the markers would not appear
+delete Icon.Default.prototype._getIconUrl;
+
+Icon.Default.mergeOptions({
+  iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
+  iconUrl: require('leaflet/dist/images/marker-icon.png'),
+  shadowUrl: require('leaflet/dist/images/marker-shadow.png')
+});
 
 Vue.config.productionTip = false
 
 new Vue({
   render: h => h(App),
+  router
 }).$mount('#app')

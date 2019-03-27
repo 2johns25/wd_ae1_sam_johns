@@ -1,28 +1,35 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="body_wrapper">
+    <AutoraHeader/>
+    
+
+
+<router-view/>
+  <AutoraFooter/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import AutoraHeader from './components/AutoraHeader.vue'
+import AutoraFooter from './components/AutoraFooter.vue'
+import Login from './pages/login.vue'
+import Dashboard from './pages/dash.vue'
+import Discover from './pages/discover.vue'
+import About from './pages/about.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    AutoraHeader,
+    AutoraFooter,
+    About,
+    Dashboard,
+    Discover,
+    About
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss" scoped>
+
 </style>
