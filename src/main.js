@@ -11,14 +11,19 @@ import About from './pages/about'
 import Dash from './pages/dash'
 import Login from './pages/login'
 import Discover from './pages/discover'
+import Join from './pages/join'
+
+import authStore from './stores/authstore';
 
 Vue.use(Router);
 
 const routes = [
-  {path: '/', component: Dash},
-  {path: '/discover', component: Discover},
+  {path: '/', component: Dash, meta: {requiresAuth: true}},
+  {path: '/discover', component: Discover, meta: {requiresAuth: true}},
   {path: '/about', component: About},
-  {path: '/login', component: Login}
+  {path: '/login', component: Login},
+  {path: '/join', component: Join}
+
 ];
 
 const router = new Router ({routes: routes})

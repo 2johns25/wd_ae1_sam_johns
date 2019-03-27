@@ -1,7 +1,7 @@
 <template>
-    <div class="login_container clearfix">
-        <h1>Login</h1>
-        <AuthForm :confEmail="false" buttonText="Sign in" :parentErrors="errors" @formSubmitted="submitForm"/>
+    <div class="join_container clearfix">
+        <h1>Don't have an account? Join now for free.</h1>
+        <AuthForm :confEmail="true" buttonText="Sign in" :parentErrors="errors" @formSubmitted="submitForm"/>
     </div>
 
 </template>
@@ -13,7 +13,7 @@ import AuthForm from '../components/AuthForm'
 
 
 export default {
-  name: 'Login',
+  name: 'Join',
   components: {
       AuthForm
   },
@@ -22,19 +22,17 @@ data () {
             errors: []
         }
     },
-    methods: {
+    methods: { 
         submitForm(user) {
             this.errors = [];
-            console.log("user has joined " + user.email);
-
-            fb.auth().signInWithEmailAndPassword(user.email, user.password)
-            .then(() => {
-                console.log("redirect to the dash");
+            console.log("Form submitted." + user)
+            fb.auth().createUserWithEmailAndPassword(user.email, user.password).then(() => {
                 this.$router.push('/');
+                console.log("All done.")
             }).catch(e => {
-                this.errors.push(e);
+                this.errors.push(e)
             });
-        },
+        }
     }
 
 }
@@ -45,7 +43,7 @@ data () {
 
 <style lang="scss">
 
-    .login_container {
+    .join_container {
         min-height: calc(100vh - 180px);
         width: 100%;
         max-width: 960px;

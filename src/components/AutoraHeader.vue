@@ -6,10 +6,12 @@
             </a>
             <div class="nav_wrapper">
                 <ul>
-                    <li><router-link to='/'>Dashboard</router-link></li>
-                    <li><router-link to='/discover'>Discover</router-link></li>
+                    <li><router-link v-if="user" to='/'>Dashboard</router-link></li>
+                    <li><router-link v-if="user" to='/discover'>Discover</router-link></li>
                     <li><router-link to='/about'>About</router-link></li>
-                    <li><a href="#">Logout</a></li>
+                    <li><router-link v-if="!user" to='/login'>Login</router-link></li>
+                    <li><router-link v-if="!user" to='/join'>Join</router-link></li>
+                    <li><a @click="logout" href="#" v-if="user">Logout</a></li>
                 </ul>
             </div>
         </div>
@@ -18,10 +20,45 @@
 
 <script>
 
+import {fb} from '../config/firebase'
+import authStore from '../stores/authstore'
+
 export default {
   name: 'AutoraHeader',
-  
-}
+
+  data() {
+      return {
+        user: "",
+        loader: true
+      }
+    },
+    created() {
+      fb.auth().onAuthStateChanged(user => {
+        this.loader = false;
+        if (user) {
+          this.user = user;
+          authStore.setAuthAction(user);
+          this.$router.push('/');
+        } else {
+          authStore.clearAuthFunction();
+        }
+
+      });
+    },
+
+    methods: {
+      logout() {
+        fb.auth().signOut()
+        .then(() => {
+          this.user = "";
+          this.$router.push("Login");
+        });
+      }
+    }
+  }
+
+
+
 
 </script>
 
@@ -59,7 +96,7 @@ export default {
 
 .nav_wrapper ul li {
     display: inline-block;
-    margin: 0 1em;
+    margin: 0 0 0 1em;
     
 }
 
