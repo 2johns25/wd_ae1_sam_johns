@@ -1,7 +1,10 @@
 import { Icon }  from 'leaflet'
 import 'leaflet/dist/leaflet.css'
-
 import './scss/main.scss';
+import 'popper.js/dist/popper.min.js'
+import 'jquery/dist/jquery.min.js'
+
+
 
 import Vue from 'vue'
 import App from './App.vue'

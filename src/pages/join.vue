@@ -42,11 +42,18 @@ data () {
 
 <style lang="scss">
 
+// Extra small devices (Portrait phones, 320px and up)
+
     .join_container {
-        min-height: calc(100vh - 180px);
-        width: 100%;
+        height: 100vh;
+        width: 99%; 
         max-width: 960px;
         margin: 0 auto;
     }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { 
+
+}
 
 </style>

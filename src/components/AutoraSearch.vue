@@ -1,17 +1,24 @@
 <template>
     <div class="autora_search_container">
-        <div class="autora_search">
-            <form action="#">
-                <div class="input_and_button_wrapper">
-                <div class="search_field">
-                    <input type="text" placeholder="Search"/>
-                </div> <!-- SEARCH FIELD WRAPPER -->
-                <div class="search_button_wrapper">
-                    <button><i class="fas fa-search"></i></button>
-                </div> <!-- SEARCH BUTTON WRAPPER -->
-            </div> <!-- INPUT AND BUTTON WRAPPER -->
-            </form> <!-- FORM -->
-        </div>
+        <form action="#">
+            <div class="button_picker">
+                <p>Select a destination type: </p>
+                <label class="pill_button_wrapper"><input type="checkbox" value="food"/><span class="checkmark">Food</span></label>
+                <label class="pill_button_wrapper"><input type="checkbox" value="accom"/><span class="checkmark">Accomodation</span></label>
+                <label class="pill_button_wrapper"><input type="checkbox" value="poi"><span class="checkmark">Points of interest</span></label>
+                <label class="pill_button_wrapper"><input type="checkbox" value="event"/><span class="checkmark">Events</span></label>
+                <label class="pill_button_wrapper"><input type="checkbox" value="attraction"/><span class="checkmark">Attractions</span></label>
+                <label class="pill_button_wrapper"><input type="checkbox" value="tour"/><span class="checkmark">Tours</span></label>
+
+                <!-- <div class="checkbox"><input type="checkbox" name="food" value="food" checked="checked"/><span class="checkmark"></span><label for="food">Food</label></div>
+                <div class="checkbox"><input type="checkbox" name="accom" value="accom"/><label for="accom">Accomodation</label></div>
+                <div class="checkbox"><input type="checkbox" name="poi" value="poi"/><label for="poi">Point of interest</label></div>
+                <div class="checkbox"><input type="checkbox" name="event" value="event"/><label for="food">Event</label></div>
+                <div class="checkbox"><input type="checkbox" name="attraction" value="attraction"/><label for="food">Attraction</label></div>
+                <div class="checkbox"><input type="checkbox" name="tour" value="tour"/><label for="food">Tour</label></div> -->
+                <button type="submit"><i class="fas fa-redo-alt"></i></button>
+            </div>
+        </form>
     </div>
 </template>
 
@@ -19,97 +26,137 @@
 
 export default {
     name: 'AutoraSearch',
-    
+     
 }
 
 </script>
 
 <style lang="scss" scoped>
 
+
+// Extra small devices (Portrait phones, 320px and up)
+
 .autora_search_container {
+    width: 100%;
+    margin: 1em auto;
+}
+
+.button_picker {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    border-bottom: 1px solid lightgrey;
+    padding: 0 0 1em 0;
+}
+
+.button_picker p {
+    font-size: 1em;
     margin: 0 0 1em 0;
-    width: 100%;
-}
-
-.autora_search {
-    width: 100%;
-    margin-right: auto;
-}
-
-.autora_search form {
-    position: relative;
-    border-radius: 3px;
-    overflow: hidden;
-}
-
-.search_field {
-    width: 100%;
-}
-
-.search_field input {
-    width: 100%;
-    padding: 0 100px 0px 10px;
-    border: none;
-    outline: none;
-    height: 50px;
-    background-color: rgb(90, 125, 165);
-    overflow: hidden;
-    border-radius: 5px;
-    color: white;
-    font-size: 1.50em;
-}
-
-.search_field input::placeholder,
-search_field input {
-    color: white;
-}
-
-.search_field input:focus {
-    background-color: white;
-    transition: 0.3s;
-    color: black;
-}
-
-.search_field input:focus::placeholder {
-    color: black;
-}
-
-.search_button_wrapper {
-    display: inline-block;
-    position: absolute; 
-    vertical-align: baseline;
-    height: 50px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    // background-color: #142E4D;
-    background-color: rgb(90, 125, 165);
-    border-left: 0;
-    overflow: hidden;
-    border-radius: 0px 5px 5px 0;
-}
-
-.search_button_wrapper button  {
-    padding: 0 30px;
-    border: 0;
-    outline: none;
-    background-color: inherit;
-    height: 100%;
-    letter-spacing: 0.08em;
-    font-size: 1.50em;
-    color: white;
+    font-weight: 700;
+    flex: none;
     display: block;
+    width: 100%;
 }
 
-.search_button_wrapper button:hover {
+.pill_button_wrapper{
+    position: relative;
+    user-select: none;
+    background-color: rgb(190, 190, 190);
+    display: block;
+    margin: 0.50em 1em 0.50em 0;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.pill_button_wrapper input {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+    cursor: pointer;
+}
+
+.checkmark {
+    display: block;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    font-size: 1em;
+    padding: 7px 15px;
+    border-radius: 20px;
+    background-color: rgb(235, 235, 235);
+}
+
+.pill_button_wrapper:hover {
+  background-color: rgb(224, 224, 224);
+}
+
+.pill_button_wrapper:hover input ~ .checkmark {
+  background-color: rgb(241, 241, 241);
+}
+
+.pill_button_wrapper input:checked ~ .checkmark {
+  background-color: rgb(105, 153, 216);
+  color: white;
+}
+
+.button_picker button {
+    padding: 7px 15px;
     background-color: #2C5F9A;
-    transition: 0.3s;
+    border: 0;
+    outline: 0;
+    color: white;
+    margin: 0.25em 0 0 0;
+    width: 100%;
+    border-radius: 3px;
 }
 
-.search_button_wrapper button:active {
-    background-color: inherit;
-    transition: 0s;
+/*
+.checkbox {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin: 0 0 0.75em 0;
 }
 
+.checkbox label {
+    font-size: 1em;
+}
+
+.checkbox input {
+    transform: scale(1.5);
+}
+*/
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { 
+
+    .button_picker {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: no-wrap;
+    }
+
+    .button_picker p {
+        width: auto;
+        font-size: 1em;
+        margin: 0 0 0 0;
+    }
+
+    .pill_button_wrapper{
+    margin: 0.50em 0.50em 0.50em 0.50em;
+}
+
+    .button_picker button {
+        align-self: center;
+        margin: 0 0 0 0;
+        width: auto;
+    }
+
+}
 
 </style>

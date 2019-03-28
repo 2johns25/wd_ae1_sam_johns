@@ -11,11 +11,18 @@
 
 <style lang="scss">
 
-    .about_container {
-        min-height: calc(100vh - 180px);
-        width: 100%;
+   // Extra small devices (Portrait phones, 320px and up)
+
+.about_container {
+        height: 100vh;
+        width: 99%;   
         max-width: 960px;
         margin: 0 auto;
     }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { 
+
+}
 
 </style>

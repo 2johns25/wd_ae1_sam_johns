@@ -1,17 +1,16 @@
 <template>
     <div class="header_wrapper">
         <div class="header_container clearfix">
-            <a href="#" class="header_logo_wrapper">
-                <img src="../assets/header_logo.svg"/>
-            </a>
+            <router-link to="/" class="header_logo_wrapper">L <i class="fas fa-long-arrow-alt-right"></i> S</router-link>
             <div class="nav_wrapper">
                 <ul>
                     <li><router-link v-if="user" to='/'>Dashboard</router-link></li>
                     <li><router-link v-if="user" to='/discover'>Discover</router-link></li>
                     <li><router-link to='/about'>About</router-link></li>
+                    <li><a @click="logout" href="#" v-if="user">Logout</a></li>
                     <li><router-link v-if="!user" to='/login'>Login</router-link></li>
                     <li><router-link v-if="!user" to='/join'>Join</router-link></li>
-                    <li><a @click="logout" href="#" v-if="user">Logout</a></li>
+                    
                 </ul>
             </div>
         </div>
@@ -64,34 +63,42 @@ export default {
 
 <style lang="scss" scoped>
 
+ // Extra small devices (Portrait phones, 320px and up)
+
 .header_wrapper {
     width: 100%;
     background-color: #2C5F9A;
 }
-
 .header_container {
-    width: 100%;
     max-width: 960px;
+    width: 99%; 
+    padding: 0.75em 0;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     white-space: nowrap;
-    padding: 5px 0;
 }
 
 .header_logo_wrapper {
-    float: left;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    letter-spacing: 0.08em;
+    font-size: 1em;
+    color: #2C5F9A;
+    background-color: white;
+    padding: 5px;
+    border-radius: 3px;
 }
 
-.nav_wrapper {
-    float: right;
+.header_logo_wrapper:hover {
+    text-decoration: none;
 }
 
 .nav_wrapper ul {
     list-style-type: none;
     white-space: nowrap;
     padding: 0;
+    margin: 0;
 }
 
 .nav_wrapper ul li {
@@ -102,16 +109,17 @@ export default {
 
 .nav_wrapper ul li:last-child {
     display: inline-block;
-    margin: 0 0 0 1em;
+    margin: 0 0 0 0;
 }
 
 .nav_wrapper ul li a {
-    padding: 10px 0 17px 0;
+    padding: 0 0 0 0;
     position: relative;
-    text-decoration: none;
+    text-decoration: none; 
     color: white;
-    text-transform: uppercase;
     letter-spacing: 0.02em;
+    font-size: 1em;
+    padding: 0 0 12px 0;
 }
 
 .nav_wrapper ul li a:hover:after {
@@ -124,4 +132,15 @@ export default {
     right: 0;
     left: 0;
 }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { 
+
+.nav_wrapper ul li {
+    margin: 0 0 0 1.50em;
+    
+}
+
+}
+
 </style>

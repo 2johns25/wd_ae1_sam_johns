@@ -18,10 +18,9 @@ export default {
     props: ['brewList'],
         data: function () {
             return {
-                zoom:13,
-                center: L.latLng(47.413220, -1.219482),
-                center: L.latLng(33.683295, -111.930685),
-                url: 'https://tile.thunderforest.com/transport/{z}/{x}/{y}.png?apikey=e955b6c9bc0b4ec6a38495e3f90d87b5',
+                zoom: 13,
+                center: L.latLng(51.5073219, -0.1276474),
+                url: 'https://tile.thunderforest.com/neighbourhood/{z}/{x}/{y}.png?apikey=dee49f63983c410bb6815f560ab4d967',
                 attribution:'&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
                 marker: L.latLng(47.413220, -1.219482),
             }
@@ -48,14 +47,25 @@ export default {
 
 <style lang="scss" scoped>
 
+// Extra small devices (Portrait phones, 320px and up)
+
+.autora_map_container {
+        width: 100%;
+    }
+
+.autora_map {
+    width: 100%;
+    height: 500px;
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { 
+
 .autora_map_container {
     width: 60%;
     float: left;
 }
 
-.autora_map {
-    width: 100%;
-    height: 500px;
 }
 
 </style>

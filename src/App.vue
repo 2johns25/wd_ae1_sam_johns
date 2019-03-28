@@ -57,4 +57,11 @@ export default {
 
 <style lang="scss" scoped>
 
+// Extra small devices (Portrait phones, 320px and up)
+
+.body_wrapper {
+    width: 100%;
+    min-width: 370px;
+    margin: 0 auto;
+}
 </style>

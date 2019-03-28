@@ -4,6 +4,8 @@
         <AutoraMap/>
         <AutoraList/>
 
+        <!-- {{results}} -->
+
     </div>
 
 </template>
@@ -23,7 +25,7 @@
             AutoraList,
             AutoraMap
         },
-        data: function() {
+       data: function() {
       return {
         key: AUTORA_KEY,
         results: [],
@@ -32,7 +34,7 @@
     },
     mounted: function() {
       const inst = axios.create({ headers: { 'Authorization': 'Bearer ' + this.key } })
-      inst.get('https://api.autoura.com/api/stops/search?group_context=friends&stop_types=food').then(r => {
+      inst.get('https://api.autoura.com/api/stops/search?stop_types=tour&geocode_lat=-33.9249&geocode_lng=18.4241').then(r => {
         this.results = r.data.response;
       }).catch(e => {
         console.log(e);
@@ -44,11 +46,18 @@
 
 <style lang="scss" scoped>
 
+// Extra small devices (Portrait phones, 320px and up)
+
     .discover_container {
-        min-height: calc(100vh - 180px);
-        width: 100%;
+        height: 100vh;
+        width: 99%;    
         max-width: 960px;
-        margin: 1em auto;
+        margin: 0 auto;
     }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { 
+
+}
 
 </style>
