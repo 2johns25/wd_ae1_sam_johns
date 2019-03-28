@@ -1,8 +1,10 @@
 <template>
     <div class="form_container">
+        
         <li :key="index" v-for="(error, index) in errors">{{error}}</li>
         <li :key="index" v-for="(error, index) in parentErrors">{{error}}</li>
-            <form @submit="submitForm">
+            <form class="auth_form" @submit="submitForm">
+                <h1>{{formHeaderText}}</h1>
                 <div class="form_group clearfix">
                     <label>Email</label>
                     <input type="email" id="email" v-model="email" class="text_input"/>
@@ -15,7 +17,7 @@
                     <label>Password</label>
                     <input type="password" id="password" v-model="password" class="text_input"/>
                 </div>
-                <button type="submit" class="submit_button">Join</button>
+                <button type="submit" class="submit_button">{{buttonText}}</button>
             </form>
     </div>
 
@@ -28,7 +30,8 @@ export default {
     props: {
         confEmail: Boolean,
         parentErrors: Array,
-        buttonText: String
+        buttonText: String,
+        formHeaderText: String
     },
 
     data() {
@@ -70,5 +73,43 @@ export default {
 
 <style lang="scss" scoped>
 
+    .form_container {
+        width: 100%;
+        max-width: 960px;
+        margin: 0 auto;
+    }
+
+    .auth_form {
+        width: 400px;
+        margin: 0 auto;
+    }
+
+   .form_group {
+        white-space: nowrap;
+        margin: 0 0 1em 0;
+        width: 200px;
+    }
+
+    .form_group label {
+        display: block;
+        margin: 0 0 0.50em 0;
+    }
+
+    .form_group input {
+        width: 100%;
+        padding: 5px 5px;
+        outline: none;
+        
+    }
+
+    form button {
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-weight: 700;
+        background-color: #2C5F9A;
+        color: white;
+        border: 0;
+        outline: none;
+    }
 
 </style>

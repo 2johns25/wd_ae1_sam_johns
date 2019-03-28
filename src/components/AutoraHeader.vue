@@ -103,7 +103,6 @@ export default {
 .nav_wrapper ul li:last-child {
     display: inline-block;
     margin: 0 0 0 1em;
-    
 }
 
 .nav_wrapper ul li a {
@@ -112,7 +111,7 @@ export default {
     text-decoration: none;
     color: white;
     text-transform: uppercase;
-    letter-spacing: 0.07em;
+    letter-spacing: 0.02em;
 }
 
 .nav_wrapper ul li a:hover:after {

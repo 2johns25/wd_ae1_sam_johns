@@ -1,7 +1,6 @@
 <template>
     <div class="login_container clearfix">
-        <h1>Login</h1>
-        <AuthForm :confEmail="false" buttonText="Sign in" :parentErrors="errors" @formSubmitted="submitForm"/>
+        <AuthForm :confEmail="false" formHeaderText="Sign in" buttonText="Sign in" :parentErrors="errors" @formSubmitted="submitForm"/>
     </div>
 
 </template>
@@ -50,32 +49,6 @@ data () {
         width: 100%;
         max-width: 960px;
         margin: 0 auto;
-    }
-
-    .form_group {
-        width: 230px;
-        white-space: nowrap;
-        margin: 0 0 1em 0;
-    }
-
-    .form_group label {
-        display: block;
-        margin: 0 0 0.50em 0;
-    }
-
-    .form_group input {
-        width: 70%;
-        padding: 5px 5px;
-        outline: none;
-    }
-
-    form button {
-        padding: 10px 20px;
-        border-radius: 5px;
-        font-weight: 700;
-        background-color: #2C5F9A;
-        color: white;
-        border: 0;
     }
 
 </style>

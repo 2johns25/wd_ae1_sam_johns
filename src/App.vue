@@ -1,7 +1,10 @@
 <template>
   <div class="body_wrapper">
+      
     <AutoraHeader/>
-    
+    <div v-if="loader" class="col-5 offset=md-5">
+      <p>Loading...</p>
+    </div>
 
 
 <router-view/>
@@ -17,6 +20,9 @@ import Dashboard from './pages/dash.vue'
 import Discover from './pages/discover.vue'
 import About from './pages/about.vue'
 
+import {fb} from './config/firebase'
+import authStore from './stores/authstore'
+
 export default {
   name: 'app',
   components: {
@@ -26,7 +32,26 @@ export default {
     Dashboard,
     Discover,
     About
-  }
+  },
+  data() {
+      return {
+        user: "",
+        loader: true
+      }
+    },
+    created() {
+      fb.auth().onAuthStateChanged(user => {
+        this.loader = false;
+        if (user) {
+          this.user = user;
+          authStore.setAuthAction(user);
+          this.$router.push('/');
+        } else {
+          authStore.clearAuthFunction();
+        }
+
+      });
+    },
 }
 </script>
 
