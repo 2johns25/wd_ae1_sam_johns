@@ -8,8 +8,9 @@
                     <li><router-link to='/about'>About</router-link></li>
                 </ul>
             </div>
-            <p class="copyright">Copyright &copy; 2019 London Sightseeing. All rights reserved</p>
-            <router-link to="/" class="footer_logo_wrapper">L <i class="fas fa-long-arrow-alt-right"></i> S</router-link>
+            <p class="copyright">Copyright &copy; 2019 London Sightseer. All rights reserved</p>
+            <router-link to="/" class="footer_logo_wrapper">London Sightseer</router-link>
+            
         </div>
     </div>
 </template>
