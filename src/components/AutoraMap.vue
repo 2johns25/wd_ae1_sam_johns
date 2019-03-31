@@ -6,6 +6,22 @@
                 <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
                 <l-marker :key="index" v-for="(result, index) in results" :lat-lng="latLng(result.location.geocode.lat, result.location.geocode.lng)">
                     <l-icon :icon-size="iconSize" :icon-url="icon"></l-icon>
+                    <l-popup>
+                        <div class="result_container">
+                <h3 class="result_name"><a :href="result.website_url">{{result.name}}</a></h3>
+                <h4 class="result_location">{{result.location.name}}</h4>
+                <div class="result_thumbnail"><img :src="result.picture.url"/></div>
+                
+                <p class="result_url" v-if="result.supplier.name">Provided by <a :href="result.website_url">{{result.supplier.name}}</a></p>
+                <p class="result_summary">{{result.summary}}</p>
+                <div class="result_action_wrapper">
+                    <a href="#" class="result_add">Add to itinerary</a>
+                    <p class="locate_button">Locate</p>
+                    <a :href="result.website_url" class="result_visit" v-if="result.website_url">Visit site</a>
+                </div>
+                
+            </div>
+                    </l-popup>
                 </l-marker>
             </l-map>
         </div>
@@ -14,7 +30,7 @@
 
 <script>
 
-import {LMap, LTileLayer, LMarker, LIcon } from 'vue2-leaflet';
+import {LMap, LTileLayer, LMarker, LIcon, LPopup } from 'vue2-leaflet';
 import pointer from '../assets/pointer.svg';
 
 export default {
@@ -39,7 +55,8 @@ export default {
             LMap,
             LTileLayer,
             LMarker,
-            LIcon
+            LIcon,
+            LPopup
         }, methods: {
             latLng: function (lat, lng) {
                 return L.latLng(lat, lng);
@@ -69,6 +86,111 @@ export default {
     width: 100%;
     height: 500px;
 }
+
+.result_name {
+    margin: 0 0 0.25em 0;
+}
+
+.result_name a {
+    color: #2C5F9A;
+}
+
+.result_location {
+    margin: 0em 0 0.75em 0;
+    color: rgb(145, 145, 145);
+}
+
+.result_thumbnail {
+    width: 100%;
+   
+}
+
+.result_thumbnail img {
+    width: 100%;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.result_url {
+    margin: 0.50em 0 0 0;
+}
+
+.result_url a {
+    color: #2C5F9A;
+}
+
+.result_summary {
+    margin: 0.50em 0 1em 0;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.result_action_wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.result_add {
+    background-color: #2C5F9A;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 10px;
+    border-radius: 3px;
+    font-weight: 600;
+    flex-grow: 2;
+}
+
+.result_add:hover {
+    background-color: rgb(74, 126, 190);
+}
+
+.result_add:active {
+    background-color: #2C5F9A;
+}
+
+.locate_button {
+    background-color: rgb(216, 216, 216);
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 10px;
+    border-radius: 3px;
+    font-weight: 600;
+    margin: 0 5px;
+    flex-grow: 1;
+    cursor: pointer;
+}
+
+.locate_button:hover {
+    background-color: rgb(226, 226, 226);
+}
+
+.locate_button:active {
+    background-color: rgb(216, 216, 216);
+}
+
+.result_visit {
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 10px;
+    background-color: rgb(216, 216, 216);
+    border-radius: 3px;
+    font-weight: 600;
+    margin: 0 0;
+    flex-grow: 1;
+}
+
+.result_visit:hover {
+    background-color: rgb(226, 226, 226);
+}
+
+.result_visit:active {
+    background-color: rgb(216, 216, 216);
+}
+
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) { 

@@ -4,13 +4,12 @@
         <form action="#">
             <div class="button_picker">
                 <p>Select a destination type: </p>
-                <label class="pill_button_wrapper"><input type="checkbox" value="food" v-model="checkedTypes" v-on:click="filterTypes"/><span class="checkmark">Food</span></label>
-                <label class="pill_button_wrapper"><input type="checkbox" value="accom" v-model="checkedTypes" v-on:click="filterTypes"/><span class="checkmark">Accomodation</span></label>
-                <label class="pill_button_wrapper"><input type="checkbox" value="poi" v-model="checkedTypes" v-on:click="filterTypes"><span class="checkmark">Points of interest</span></label>
-                <label class="pill_button_wrapper"><input type="checkbox" value="event" v-model="checkedTypes" v-on:click="filterTypes"/><span class="checkmark">Events</span></label>
-                <label class="pill_button_wrapper"><input type="checkbox" value="attraction" v-model="checkedTypes" v-on:click="filterTypes"/><span class="checkmark">Attractions</span></label>
-                <label class="pill_button_wrapper"><input type="checkbox" value="tour" v-model="checkedTypes" v-on:click="filterTypes"/><span class="checkmark">Tours</span></label>
-                <button type="submit"><i class="fas fa-redo-alt"></i>Search</button>
+                <label class="pill_button_wrapper"><input type="checkbox" value="food" v-model="checkedTypes"><span class="checkmark">Food</span></label>
+                <label class="pill_button_wrapper"><input type="checkbox" value="accom" v-model="checkedTypes" /><span class="checkmark">Accomodation</span></label>
+                <label class="pill_button_wrapper"><input type="checkbox" value="event" v-model="checkedTypes" /><span class="checkmark">Events</span></label>
+                <label class="pill_button_wrapper"><input type="checkbox" value="tour" v-model="checkedTypes" /><span class="checkmark">Tours</span></label>
+                <label class="pill_button_wrapper"><input type="checkbox" value="poi" v-model="checkedTypes" /><span class="checkmark">Points of Interest</span></label>
+                <label class="pill_button_wrapper"><input type="checkbox" value="attraction" v-model="checkedTypes" /><span class="checkmark">Attractions</span></label>
                 {{checkedTypes}}
             </div>
         </form>
@@ -41,13 +40,12 @@
             key: AUTORA_KEY,
             results: [],
             show: false,
-            checkedTypes: [],
-            results: []
+            checkedTypes: []
         }
         },
         mounted: function() {
             const inst = axios.create({ headers: { 'Authorization': 'Bearer ' + this.key } })
-            inst.get('https://api.autoura.com/api/stops/search?stop_types=food&geocode_lat=51.51770&geocode_lng=-0.11352&geocode_distance=10').then(r => {
+            inst.get('https://api.autoura.com/api/stops/search?stop_types=food&geocode_lat=51.51770&geocode_lng=-0.11352&geocode_distance=10&group_context=kids').then(r => {
                 this.results = r.data.response;
             }).catch(e => {
                 console.log(e);
@@ -58,7 +56,7 @@
                 console.log(index, "mouse down")
             },
             filterTypes: function(checkedTypes) {
-                console.log(checkedTypes)
+                console.log(r)
             }
         }
     }

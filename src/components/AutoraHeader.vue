@@ -1,7 +1,8 @@
 <template>
     <div class="header_wrapper">
         <div class="header_container clearfix">
-            <router-link to="/" class="header_logo_wrapper">London Sightseer</router-link>
+            <router-link to="/" class="header_logo_wrapper">London Sightseers</router-link>
+            
             <div class="nav_wrapper">
                 <ul>
                     <li v-if="user"><router-link  to='/'>Dashboard</router-link></li>

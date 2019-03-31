@@ -95,6 +95,8 @@ export default {
 
 .result_summary {
     margin: 0.50em 0 1em 0;
+    line-height: 1.5;
+    text-align: justify;
 }
 
 .result_action_wrapper {
@@ -133,6 +135,7 @@ export default {
     font-weight: 600;
     margin: 0 5px;
     flex-grow: 1;
+    cursor: pointer;
 }
 
 .locate_button:hover {

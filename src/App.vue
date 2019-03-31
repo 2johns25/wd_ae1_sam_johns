@@ -1,13 +1,10 @@
 <template>
   <div class="body_wrapper">
-      
     <AutoraHeader/>
-    <div v-if="loader" class="col-5 offset=md-5">
-      <p>Loading...</p>
-    </div>
-
-
 <router-view/>
+    <div v-if="loader" class=loader>
+        <p>Loading...</p>
+    </div>
   <AutoraFooter/>
   </div>
 </template>
@@ -16,7 +13,7 @@
 import AutoraHeader from './components/AutoraHeader.vue'
 import AutoraFooter from './components/AutoraFooter.vue'
 import Login from './pages/login.vue'
-import Dashboard from './pages/dash.vue'
+import Dash from './pages/dash.vue'
 import Discover from './pages/discover.vue'
 import About from './pages/about.vue'
 
@@ -29,7 +26,7 @@ export default {
     AutoraHeader,
     AutoraFooter,
     About,
-    Dashboard,
+    Dash,
     Discover,
     About
   },
