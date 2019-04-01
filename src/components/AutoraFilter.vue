@@ -9,7 +9,7 @@
                 <label class="pill_button_wrapper"><input type="checkbox" value="tour" v-model="checkedTypes" /><span class="checkmark">Tours</span></label>
                 <label class="pill_button_wrapper"><input type="checkbox" value="poi" v-model="checkedTypes" /><span class="checkmark">Points of Interest</span></label>
                 <label class="pill_button_wrapper"><input type="checkbox" value="attraction" v-model="checkedTypes" /><span class="checkmark">Attractions</span></label>
-                {{checkedTypes}}
+                <!-- {{checkedTypes}} -->
             </div>
         </form>
     </div>

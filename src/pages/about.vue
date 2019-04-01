@@ -2,6 +2,8 @@
     <div class="about_container">
         <h1 class="page_header">About</h1>
         
+        <p></p>
+
     </div>
 
 </template>

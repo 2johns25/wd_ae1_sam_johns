@@ -3,7 +3,7 @@
         <AutoraFilter/>
         <div class="autora_map_and_list_wrapper">
             <AutoraMap :results="results"/>
-            <AutoraList :results="results"/>
+            <AutoraList @mouse-down="locateStop" @mouse-up="stopLocate" :results="results"/>
         </div>
 
         <!-- {{results}} -->
@@ -29,20 +29,31 @@
         return {
             key: AUTORA_KEY,
             results: [],
-            show: false
+            show: false,
+            normalIcon: [25,25],
+            largeIcon: [70,70]
         }
         },
         mounted: function() {
             const inst = axios.create({ headers: { 'Authorization': 'Bearer ' + this.key } })
             inst.get('https://api.autoura.com/api/stops/search?stop_types=food&geocode_lat=51.51770&geocode_lng=-0.11352&geocode_distance=10&group_context=kids').then(r => {
-                this.results = r.data.response;
+                this.results = r.data.response
+                .map(r => {
+                    r.iconSize = this.normalIcon;
+                    return r;
+                });
             }).catch(e => {
                 console.log(e);
             })
         },
         methods: {
-            mouseDownResults: function(index) {
-                console.log(index, "mouse down")
+            locateStop: function(index) {
+                this.results[index].iconSize = this.largeIcon;
+                console.log(index, "Locate stop")
+            },
+            stopLocate: function(index) {
+                this.results[index].iconSize = this.normalIcon;
+                console.log(index, "Stop locate")
             }
         }
     }

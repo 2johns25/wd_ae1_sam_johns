@@ -5,7 +5,7 @@
             <l-map @update:zoom="zoomUpdate" @update:center="centerUpdate" :zoom="zoom" :center="center">
                 <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
                 <l-marker :key="index" v-for="(result, index) in results" :lat-lng="latLng(result.location.geocode.lat, result.location.geocode.lng)">
-                    <l-icon :icon-size="iconSize" :icon-url="icon"></l-icon>
+                    <l-icon :icon-size="result.iconSize" :icon-url="icon"></l-icon>
                     <l-popup>
                         <div class="result_container">
                             <h3 class="result_name"><a :href="result.website_url">{{result.name}}</a></h3>
@@ -40,9 +40,9 @@ export default {
     },
         data: function () {
             return {
-                zoom: 11,
+                zoom: 12,
                 center: L.latLng(51.51770, -0.11352),
-                currentZoom: 11,
+                currentZoom: 12,
                 currentCenter: (51.51770, -0.11352),
                 url: 'https://tile.thunderforest.com/neighbourhood/{z}/{x}/{y}.png?apikey=dee49f63983c410bb6815f560ab4d967',
                 attribution:'&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',

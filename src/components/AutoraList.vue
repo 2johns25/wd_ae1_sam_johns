@@ -10,7 +10,7 @@
                 <p class="result_address">{{result.location.address}}</p>
                 <div class="result_action_wrapper">
                     <a href="#" class="result_add">Save to favourites</a>
-                    <p class="locate_button" @click="locateStop(index)" @click="stopLocate">Locate</p>
+                    <p class="locate_button" @mousedown="locateStop(index)" @mouseup="stopLocate(index)">Locate</p>
                     <a :href="result.website_url" class="result_visit" v-if="result.website_url">Visit site</a>
                 </div>
             </div>
@@ -27,10 +27,10 @@ export default {
     }, 
     methods: {
         locateStop: function(index) {
-            this.$emit("first_locate_click", index)
+            this.$emit("mouse-down", index)
         },
         stopLocate: function(index) {
-            this.$emit("second_locate_click", index)
+            this.$emit("mouse-up", index)
         }
     }
 }
