@@ -5,15 +5,12 @@
     <div v-if="loader" class=loader>
         <p>Loading...</p>
     </div>
-  <AutoraFooter/>
   </div>
 </template>
 
 <script>
 import AutoraHeader from './components/AutoraHeader.vue'
-import AutoraFooter from './components/AutoraFooter.vue'
 import Login from './pages/login.vue'
-import Dash from './pages/dash.vue'
 import Discover from './pages/discover.vue'
 import About from './pages/about.vue'
 
@@ -24,9 +21,7 @@ export default {
   name: 'app',
   components: {
     AutoraHeader,
-    AutoraFooter,
     About,
-    Dash,
     Discover,
     About
   },
@@ -42,7 +37,7 @@ export default {
         if (user) {
           this.user = user;
           authStore.setAuthAction(user);
-          this.$router.push('/');
+          this.$router.push('/discover');
         } else {
           authStore.clearAuthFunction();
         }
@@ -61,4 +56,8 @@ export default {
     min-width: 370px;
     margin: 0 auto;
 }
+
+// Medium devices (tablets, 768px and up)
+
+
 </style>

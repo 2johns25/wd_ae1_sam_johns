@@ -1,18 +1,19 @@
 <template>
     <div class="header_wrapper">
         <div class="header_container clearfix">
-            <router-link to="/" class="header_logo_wrapper">London Sightseers</router-link>
+            <router-link to="/discover" class="header_logo_wrapper">London Sightseers</router-link>
             
             <div class="nav_wrapper">
                 <ul>
-                    <li v-if="user"><router-link  to='/'>Dashboard</router-link></li>
-                    <li v-if="user"><router-link to='/discover'>Discover</router-link></li>
-                    <li><router-link to='/about'>About</router-link></li>
-                    <li v-if="user"><a @click="logout" href="#" >Logout</a></li>
-                    <li v-if="!user"><router-link to='/login'>Login</router-link></li>
-                    <li v-if="!user"><router-link to='/join'>Join</router-link></li>
-                    
+                    <li v-if="user"><router-link to='/discover'><i class="fas fa-compass"></i></router-link></li>
+                    <li v-if="user" class="favourites_box"><a href="#"><i class="fas fa-heart"></i></a></li>
+                    <li><router-link to='/about'><i class="fas fa-info-circle"></i></router-link></li>
+                    <li v-if="user"><a @click="logout" href="#" ><i class="fas fa-sign-out-alt"></i></a></li>
+                    <li v-if="!user" class="login"><router-link to="/login">Login</router-link></li>
                 </ul>
+                <div class="favourites_dropdown">
+                    <h2>Favouritess</h2>
+                </div>
             </div>
         </div>
     </div>
@@ -24,36 +25,53 @@ import {fb} from '../config/firebase'
 import authStore from '../stores/authstore'
 
 export default {
-  name: 'AutoraHeader',
-
-  data() {
-      return {
-        user: "",
-        loader: true
-      }
-    },
-    created() {
-      fb.auth().onAuthStateChanged(user => {
-        this.loader = false;
-        if (user) {
-          this.user = user;
-          authStore.setAuthAction(user);
-          this.$router.push('/');
-        } else {
-          authStore.clearAuthFunction();
+    name: 'AutoraHeader',
+    data() {
+        return {
+            user: "",
+            loader: true,
+            visible: true,
+            hidden: false
         }
+        },
+        created() {
+        fb.auth().onAuthStateChanged(user => {
+            this.loader = false;
+            if (user) {
+            this.user = user;
+            authStore.setAuthAction(user);
+            this.$router.push('/discover');
+            } else {
+            authStore.clearAuthFunction();
+            }
 
-      });
-    },
-
-    methods: {
-      logout() {
-        fb.auth().signOut()
-        .then(() => {
-          this.user = "";
-          this.$router.push("Login");
         });
-      }
+        },
+
+        computed: {
+            compClasses: function() {
+                return {
+                    visible:this.visible
+                }
+            }
+        },
+
+        methods: {
+        logout() {
+            fb.auth().signOut()
+            .then(() => {
+            this.user = "";
+            this.$router.push("Login");
+            });
+        },
+
+
+        toggleFavs: function () {
+            event.preventDefault();
+            // visible = !visible
+            console.log("button clicked");
+
+        }
     }
   }
 
@@ -95,6 +113,10 @@ export default {
     text-decoration: none;
 }
 
+.nav_wrapper {
+    position: relative;
+}
+
 .nav_wrapper ul {
     list-style-type: none;
     white-space: nowrap;
@@ -104,35 +126,53 @@ export default {
 
 .nav_wrapper ul li {
     display: inline-block;
-    margin: 0 0 0 1em;   
+    margin: 0 0 0 2em;   
 }
 
 .nav_wrapper ul li a {
     padding: 0 0 0 0;
     position: relative;
     text-decoration: none; 
-    color: white;
     letter-spacing: 0.02em;
-    font-size: 1em;
-    padding: 0 0 12px 0;
+    font-size: 1.5em;
 }
 
-.nav_wrapper ul li a:hover:after {
-    content: " ";
-    height: 2px;
-    width: 100%;
-    background-color: white;
+.nav_wrapper ul li a i {
+    color: white;
+    font-size: 1em;
+}
+
+.nav_wrapper ul li a i:hover {
+    color: rgb(179, 179, 179);
+    
+}
+
+.login a {
+    color: white;
+}
+
+.favourites_dropdown {
     position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
+    height: 300px;
+    width: 300px;
+    background-color: grey;
+    border: 1px solid lightgrey;
+    top: 100%;
+    right: 50%;
+    z-index: 99999;
+    border-radius: 5px;
+    display: none;
+}
+
+.hidden {
+    display: none;
 }
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) { 
 
 .nav_wrapper ul li {
-    margin: 0 0 0 1.50em;   
+    margin: 0 0 0 2em;   
 }
 
 }

@@ -1,6 +1,6 @@
 <template>
     <div class="login_container clearfix">
-        <AuthForm :confEmail="false" formHeaderText="Sign in" buttonText="Sign in" :parentErrors="errors" @formSubmitted="submitForm"/>
+        <AuthForm :confEmail="false" formHeaderText="Sign in" buttonText="Sign in" altText="Don't have an account?" altLink="/join" :parentErrors="errors" @formSubmitted="submitForm"/>
     </div>
 
 </template>

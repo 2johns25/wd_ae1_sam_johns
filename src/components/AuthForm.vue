@@ -18,7 +18,9 @@
                     <input type="password" id="password" v-model="password" class="text_input"/>
                 </div>
                 <button type="submit" class="submit_button">{{buttonText}}</button>
+                <p class="alt">{{altText}} <router-link v-bind:to="altLink">Click here.</router-link></p>
             </form>
+            
     </div>
 
 </template>
@@ -31,7 +33,9 @@ export default {
         confEmail: Boolean,
         parentErrors: Array,
         buttonText: String,
-        formHeaderText: String
+        formHeaderText: String,
+        altText: String,
+        altLink: String
     },
 
     data() {
@@ -110,6 +114,10 @@ export default {
         color: white;
         border: 0;
         outline: none;
+    }
+
+    .alt a {
+        color: #2C5F9A;
     }
 
 </style>

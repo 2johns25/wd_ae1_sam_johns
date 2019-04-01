@@ -1,23 +1,21 @@
 <template>
     <div class="autora_list_container">
         <div class="autora_list">
-            <div class="result_container" v-bind:key="index" v-for="(result, index) in results">
-                <h3 class="result_name"><a :href="result.website_url">{{result.name}}</a></h3>
-                <h4 class="result_location">{{result.location.name}}</h4>
+            <div class="result_container" :key="index" v-for="(result, index) in results">
                 <div class="result_thumbnail"><img :src="result.picture.url"/></div>
-                
+                <h2 class="result_name"><a :href="result.website_url">{{result.name}}</a></h2>
+                <h3 class="result_location">{{result.location.name}}</h3>
                 <p class="result_url" v-if="result.supplier.name">Provided by <a :href="result.website_url">{{result.supplier.name}}</a></p>
                 <p class="result_summary">{{result.summary}}</p>
+                <p class="result_address">{{result.location.address}}</p>
                 <div class="result_action_wrapper">
-                    <a href="#" class="result_add">Add to itinerary</a>
-                    <p class="locate_button">Locate</p>
+                    <a href="#" class="result_add">Save to favourites</a>
+                    <p class="locate_button" @click="locateStop(index)" @click="stopLocate">Locate</p>
                     <a :href="result.website_url" class="result_visit" v-if="result.website_url">Visit site</a>
                 </div>
-                
             </div>
         </div>
     </div>
-
 </template>
 
 <script>
@@ -25,10 +23,15 @@
 export default {
     name: 'AutoraList',
     props: {
-        results: Array
-    },
+        results: Array,
+    }, 
     methods: {
-        
+        locateStop: function(index) {
+            this.$emit("first_locate_click", index)
+        },
+        stopLocate: function(index) {
+            this.$emit("second_locate_click", index)
+        }
     }
 }
 
@@ -39,30 +42,25 @@ export default {
 // Extra small devices (Portrait phones, 320px and up)
 
 .autora_list_container {
-        width: 100%;
-        margin: 0 auto;
-        overflow: hidden;
-        border-right: 1px solid rgb(224, 224, 224);
-        overflow-y: scroll; 
-        padding: 0 1em 0 0;
-    }
+    width: 100%;
+    z-index: 9999;
+    box-shadow: -1px 0px 10px 0px rgb(136, 136, 136);
+}
 
 .autora_list {
     width: 100%;
-    height: 200px;
 }
 
 .result_container {
-    width: 100%;
-    margin: 0 0 1em 0;
-    border-radius: 5px;
-    padding: 0.50em;
-    border: 1px solid rgb(224, 224, 224);
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);  
+    width: 95%;
+    margin: 1em auto;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+    // box-shadow: 0 1px 5px 1px rgb(150, 150, 150);
 }
 
 .result_name {
-    margin: 0 0 0.25em 0;
+    margin: 0 10px;
 }
 
 .result_name a {
@@ -72,21 +70,21 @@ export default {
 .result_location {
     margin: 0em 0 0.75em 0;
     color: rgb(145, 145, 145);
+    margin: 0 10px;
 }
 
 .result_thumbnail {
     width: 100%;
-   
+    margin: 0 0 0.50em 0;
 }
 
 .result_thumbnail img {
     width: 100%;
-    border-radius: 3px;
     overflow: hidden;
 }
 
 .result_url {
-    margin: 0.50em 0 0 0;
+    margin: 0.50em 10px;
 }
 
 .result_url a {
@@ -94,17 +92,23 @@ export default {
 }
 
 .result_summary {
-    margin: 0.50em 0 1em 0;
+    margin: 0.50em 10px 1em 10px;
     line-height: 1.5;
     text-align: justify;
 }
 
+.result_address {
+    font-weight: 700;
+    margin: 0.50em 10px;
+}
+
 .result_action_wrapper {
-    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    padding: 0.50em 0 1em 0;
+    margin: 0.50em 10px 0 10px;
 }
 
 .result_add {
@@ -133,7 +137,7 @@ export default {
     padding: 10px 10px;
     border-radius: 3px;
     font-weight: 600;
-    margin: 0 5px;
+    margin: 0 0 0 5px;
     flex-grow: 1;
     cursor: pointer;
 }
@@ -153,8 +157,9 @@ export default {
     background-color: rgb(216, 216, 216);
     border-radius: 3px;
     font-weight: 600;
-    margin: 0 0;
+    margin: 0 0 0 5px;
     flex-grow: 1;
+    color: black;
 }
 
 .result_visit:hover {
@@ -165,18 +170,22 @@ export default {
     background-color: rgb(216, 216, 216);
 }
 
+
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) { 
 
 .autora_list_container {
-    width: 35%;
-    float: right;
+    width: 350px;
+    overflow-y: scroll;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    box-shadow: -1px 0px 10px 0px rgb(136, 136, 136);
 }
 
-.autora_list {
-    height: 500px;
 }
 
-}
-    
 </style>

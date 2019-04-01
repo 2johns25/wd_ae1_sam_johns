@@ -8,20 +8,20 @@
                     <l-icon :icon-size="iconSize" :icon-url="icon"></l-icon>
                     <l-popup>
                         <div class="result_container">
-                <h3 class="result_name"><a :href="result.website_url">{{result.name}}</a></h3>
-                <h4 class="result_location">{{result.location.name}}</h4>
-                <div class="result_thumbnail"><img :src="result.picture.url"/></div>
-                
-                <p class="result_url" v-if="result.supplier.name">Provided by <a :href="result.website_url">{{result.supplier.name}}</a></p>
-                <p class="result_summary">{{result.summary}}</p>
-                <div class="result_action_wrapper">
-                    <a href="#" class="result_add">Add to itinerary</a>
-                    <p class="locate_button">Locate</p>
-                    <a :href="result.website_url" class="result_visit" v-if="result.website_url">Visit site</a>
-                </div>
-                
-            </div>
+                            <h3 class="result_name"><a :href="result.website_url">{{result.name}}</a></h3>
+                            <h4 class="result_location">{{result.location.name}}</h4>
+                            <div class="result_thumbnail"><img :src="result.picture.url"/></div>
+                            
+                            <p class="result_url" v-if="result.supplier.name">Provided by <a :href="result.website_url">{{result.supplier.name}}</a></p>
+                            <p class="result_summary">{{result.summary}}</p>
+                            <p class="result_address">{{result.location.address}}</p>
+                            <div class="result_action_wrapper">
+                                <a href="#" class="result_add">Save to favourites</a>
+                                <a :href="result.website_url" class="result_visit" v-if="result.website_url">Visit site</a>
+                            </div>
+                         </div>
                     </l-popup>
+                    <l-tooltip>{{result.name}}</l-tooltip>
                 </l-marker>
             </l-map>
         </div>
@@ -30,13 +30,13 @@
 
 <script>
 
-import {LMap, LTileLayer, LMarker, LIcon, LPopup } from 'vue2-leaflet';
+import {LMap, LTileLayer, LMarker, LIcon, LPopup, LTooltip} from 'vue2-leaflet';
 import pointer from '../assets/pointer.svg';
 
 export default {
     name: 'AutoraMap',
     props: {
-        results: Array
+        results: Array,
     },
         data: function () {
             return {
@@ -48,7 +48,7 @@ export default {
                 attribution:'&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
                 marker: L.latLng(47.413220, -1.219482),
                 icon: pointer,
-                iconSize: [25,25]
+                iconSize: [25,25],
             }
         },
         components: {
@@ -56,7 +56,8 @@ export default {
             LTileLayer,
             LMarker,
             LIcon,
-            LPopup
+            LPopup,
+            LTooltip
         }, methods: {
             latLng: function (lat, lng) {
                 return L.latLng(lat, lng);
@@ -79,12 +80,16 @@ export default {
 .autora_map_container {
     width: 100%;
     border-radius: 5px;
-    overflow: hidden;
+    z-index: 50;
 }
 
 .autora_map {
     width: 100%;
-    height: 500px;
+    height: 100vh;
+}
+
+.result_container {
+    margin: 5px;
 }
 
 .result_name {
@@ -125,12 +130,18 @@ export default {
     text-align: justify;
 }
 
+.result_address {
+    font-weight: 700;
+}
+
 .result_action_wrapper {
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    border-top: 1px solid lightgray;
+    padding: 1em 0 0 0;
 }
 
 .result_add {
@@ -159,7 +170,7 @@ export default {
     padding: 10px 10px;
     border-radius: 3px;
     font-weight: 600;
-    margin: 0 5px;
+    margin: 0 0 0 5px;
     flex-grow: 1;
     cursor: pointer;
 }
@@ -179,8 +190,9 @@ export default {
     background-color: rgb(216, 216, 216);
     border-radius: 3px;
     font-weight: 600;
-    margin: 0 0;
+    margin: 0 0 0 5px;
     flex-grow: 1;
+    color: black;
 }
 
 .result_visit:hover {
@@ -194,11 +206,6 @@ export default {
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) { 
-
-    .autora_map_container {
-        width: 60%;
-        float: left;
-    }
 
 }
 

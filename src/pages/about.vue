@@ -1,6 +1,7 @@
 <template>
     <div class="about_container">
         <h1 class="page_header">About</h1>
+        
     </div>
 
 </template>
@@ -19,6 +20,10 @@
         max-width: 960px;
         margin: 0 auto;
     }
+
+.alt a {
+    color: #2C5F9A;
+}
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) { 
