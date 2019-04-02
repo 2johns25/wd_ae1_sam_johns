@@ -4,7 +4,7 @@
             <p>Loading...</p>
         </div>
         <div class="header_container clearfix">
-            <router-link to="/discover" class="header_logo_wrapper">London Sightseers</router-link>
+            <router-link to="/" class="header_logo_wrapper">London Sightseers</router-link>
             
             <div class="nav_wrapper">
                 <ul>
@@ -14,8 +14,8 @@
                     <li v-if="user"><a @click="logout" href="#" ><i class="fas fa-sign-out-alt"></i></a></li>
                     <li v-if="!user" class="login"><router-link to="/login">Login</router-link></li>
                 </ul>
-                <div class="favourites" v-if="isVisible">
-                    <h2>Community favourites
+                <div class="favourites" v-if="isVisible && user">
+                    <h2>Favourited
                         <p class="close_button" v-on:click="isVisible = false">Close</p>
                     </h2>
                     <div class="single_favourite clearfix" v-for="(favourite, index) in favourites" :key="index">
@@ -81,9 +81,6 @@ export default {
     }
   }
 
-
-
-
 </script>
 
 <style lang="scss" scoped>
@@ -95,9 +92,8 @@ export default {
     background-color: #2C5F9A;
 }
 .header_container {
-    max-width: 960px;
     width: 99%; 
-    padding: 0.75em 0;
+    padding: 0.75em 0.50em;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;

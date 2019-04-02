@@ -9,7 +9,7 @@
                 <p class="result_summary">{{result.summary}}</p>
                 <p class="result_address">{{result.location.address}}</p>
                 <div class="result_action_wrapper">
-                    <a href="#" class="result_add" @click="addFavourite(result)">Add to favourites</a>
+                    <a href="#" class="result_add" @click="addFavourite(result)"><i class="fas fa-heart"></i></a>
                     <p class="locate_button" @mousedown="locateStop(index)" @mouseup="stopLocate(index)">Locate</p>
                     <a :href="result.website_url" class="result_visit" v-if="result.website_url">Visit site</a>
                 </div>

@@ -17,7 +17,7 @@
                     <label>Password</label>
                     <input type="password" id="password" v-model="password" class="text_input"/>
                 </div>
-                <button type="submit" class="submit_button">{{buttonText}}</button>
+                <button type="submit" class="submit_button">{{buttonText}}</button></br>
                 <p class="alt">{{altText}} <router-link v-bind:to="altLink">Click here.</router-link></p>
             </form>
             
@@ -40,9 +40,9 @@ export default {
 
     data() {
         return {
-            email: "peter.watsit@solent.ac.uk",
-            confirmEmail: "peter.watsit@solent.ac.uk",
-            password: "password",
+            email: "",
+            confirmEmail: "",
+            password: "",
             errors: []
         };
     },
@@ -84,8 +84,12 @@ export default {
     }
 
     .auth_form {
-        width: 400px;
+        width: 210px;
         margin: 0 auto;
+    }
+
+    h1, p {
+       display: inline-block;
     }
 
    .form_group {
@@ -114,6 +118,7 @@ export default {
         color: white;
         border: 0;
         outline: none;
+        display: inline-block;
     }
 
     .alt a {

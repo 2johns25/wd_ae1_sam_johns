@@ -55,9 +55,7 @@ export default {
     width: 100%;
     min-width: 370px;
     margin: 0 auto;
+    height: 100vh;
 }
-
-// Medium devices (tablets, 768px and up)
-
 
 </style>

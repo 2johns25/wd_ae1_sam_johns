@@ -16,7 +16,7 @@
                             <p class="result_summary">{{result.summary}}</p>
                             <p class="result_address">{{result.location.address}}</p>
                             <div class="result_action_wrapper">
-                                <a href="#" class="result_add">Add to favourites</a>
+                                <a href="#" class="result_add" @click="addFavourite(result)"><i class="fas fa-heart"></i></a>
                                 <a :href="result.website_url" class="result_visit" v-if="result.website_url">Visit site</a>
                             </div>
                          </div>
@@ -32,6 +32,8 @@
 
 import {LMap, LTileLayer, LMarker, LIcon, LPopup, LTooltip} from 'vue2-leaflet';
 import pointer from '../assets/pointer.svg';
+import {db, ts} from '../config/firebase'
+import authStore from '../stores/authstore'
 
 export default {
     name: 'AutoraMap',
@@ -68,6 +70,21 @@ export default {
             zoomUpdate: function(zoom) {
                this.currentZoom = zoom;
             },
+            addFavourite: function(result) {
+            db.collection("favourites").add({
+                address: result.location.address,
+                destination_name: result.name,
+                geocode_name: result.location.name,
+                image_url: result.picture.url,
+                site_link: result.website_url,
+                stop_type: result.stop_type,
+                summary: result.summary,
+                time: ts,
+                user: authStore.state.user.email
+            });
+            console.log("favourite clicked", result.location.name, result.website_url)
+            // this.$emit("click-favourite", index)
+        }
         }
 }
 
