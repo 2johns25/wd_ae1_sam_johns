@@ -1,29 +1,29 @@
 # ae1_sam_johns
 
-## Project setup
-```
-npm install
-```
+## About the project
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+The London Sightseer site enables users to view and discover 
+a variety of food establishments within London, including supermarkets, local shops,
+cafès and restaurants.
 
-### Compiles and minifies for production
-```
-npm run build
-```
+This site was designed and built by Sam Johns, during the final year of university
+at Solent University. This is for the Web Design (SWD600) unit, taught by Joe Appleton.
 
-### Run your tests
-```
-npm run test
-```
+For this assignment, the task was to design and develop a single-page web application,
+which connects to the Autora API, allowing the site to consume, process and display real-world data, with the support of a 
+real-time database.
 
-### Lints and fixes files
-```
-npm run lint
-```
+To develop this site, the Vue.JS JavaScript framework was used, along with the popular NoSQL,
+Firebase database. In addition to those, various other technologies were used to enhance the application.
+For example, Vue2Leaflet, is used to display maps, Vue Routers, are used to enable multiple pages,
+and Axios, is necessary to retrieve data from the Autora API.
+
+
+## Run the project locally
+
+1. Close this repository
+2. run ``` npm install ```
+3. run ```npm run serve ```
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
