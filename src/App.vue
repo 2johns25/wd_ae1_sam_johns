@@ -28,7 +28,7 @@ export default {
   data() {
       return {
         user: "",
-        loader: true
+        loader: false
       }
     },
     created() {
@@ -37,7 +37,7 @@ export default {
         if (user) {
           this.user = user;
           authStore.setAuthAction(user);
-          this.$router.push('/discover');
+          this.$router.push('/');
         } else {
           authStore.clearAuthFunction();
         }

@@ -1,6 +1,5 @@
 <template>
     <div class="discover_container clearfix">
-        <AutoraFilter/>
         <div class="autora_map_and_list_wrapper">
             <AutoraMap :results="results"/>
             <AutoraList @mouse-down="locateStop" @mouse-up="stopLocate" :results="results"/>
@@ -12,7 +11,6 @@
 </template>
 
 <script>
-    import AutoraFilter from '../components/AutoraFilter'
     import AutoraMap from '../components/AutoraMap';
     import AutoraList from '../components/AutoraList'
     import { AUTORA_KEY } from '../config/autora_config.js';
@@ -22,8 +20,7 @@
         name: 'Discover',
         components: {
             AutoraMap,
-            AutoraList,
-            AutoraFilter
+            AutoraList
         },
         data: function() {
         return {
@@ -78,7 +75,5 @@
     overflow-y: scroll;
     border-top: 1px solid rgb(206, 206, 206);
 }
-
-
 
 </style>

@@ -9,7 +9,7 @@
                 <p class="result_summary">{{result.summary}}</p>
                 <p class="result_address">{{result.location.address}}</p>
                 <div class="result_action_wrapper">
-                    <a href="#" class="result_add">Save to favourites</a>
+                    <a href="#" class="result_add" @click="addFavourite(result)">Add to favourites</a>
                     <p class="locate_button" @mousedown="locateStop(index)" @mouseup="stopLocate(index)">Locate</p>
                     <a :href="result.website_url" class="result_visit" v-if="result.website_url">Visit site</a>
                 </div>
@@ -20,10 +20,13 @@
 
 <script>
 
+import {db, ts} from '../config/firebase'
+import authStore from '../stores/authstore'
+
 export default {
     name: 'AutoraList',
     props: {
-        results: Array,
+        results: Array
     }, 
     methods: {
         locateStop: function(index) {
@@ -31,6 +34,21 @@ export default {
         },
         stopLocate: function(index) {
             this.$emit("mouse-up", index)
+        },
+        addFavourite: function(result) {
+            db.collection("favourites").add({
+                address: result.location.address,
+                destination_name: result.name,
+                geocode_name: result.location.name,
+                image_url: result.picture.url,
+                site_link: result.website_url,
+                stop_type: result.stop_type,
+                summary: result.summary,
+                time: ts,
+                user: authStore.state.user.email
+            });
+            console.log("favourite clicked", result.location.name, result.website_url)
+            // this.$emit("click-favourite", index)
         }
     }
 }

@@ -20,7 +20,7 @@ import authStore from './stores/authstore';
 Vue.use(Router);
 
 const routes = [
-  {path: '/discover', component: Discover, meta: {requiresAuth: true}},
+  {path: '/', component: Discover, meta: {requiresAuth: true}},
   {path: '/about', component: About},
   {path: '/login', component: Login},
   {path: '/join', component: Join}

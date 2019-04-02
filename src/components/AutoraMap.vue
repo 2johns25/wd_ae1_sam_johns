@@ -16,7 +16,7 @@
                             <p class="result_summary">{{result.summary}}</p>
                             <p class="result_address">{{result.location.address}}</p>
                             <div class="result_action_wrapper">
-                                <a href="#" class="result_add">Save to favourites</a>
+                                <a href="#" class="result_add">Add to favourites</a>
                                 <a :href="result.website_url" class="result_visit" v-if="result.website_url">Visit site</a>
                             </div>
                          </div>
@@ -41,9 +41,9 @@ export default {
         data: function () {
             return {
                 zoom: 12,
-                center: L.latLng(51.51770, -0.11352),
+                center: L.latLng(51.498394, -0.098314),
                 currentZoom: 12,
-                currentCenter: (51.51770, -0.11352),
+                currentCenter: (51.498394, -0.098314),
                 url: 'https://tile.thunderforest.com/neighbourhood/{z}/{x}/{y}.png?apikey=dee49f63983c410bb6815f560ab4d967',
                 attribution:'&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
                 marker: L.latLng(47.413220, -1.219482),
