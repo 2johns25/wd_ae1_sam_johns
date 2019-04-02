@@ -6,6 +6,9 @@ The London Sightseer site enables users to view and discover
 a variety of food establishments within London, including supermarkets, local shops,
 cafès and restaurants.
 
+A live preview of the site can be viewed here:
+``` https://wd-ae1-autora.firebaseapp.com/#/Login ```
+
 This site was designed and built by Sam Johns, during the final year of university
 at Solent University. This is for the Web Design (SWD600) unit, taught by Joe Appleton.
 
