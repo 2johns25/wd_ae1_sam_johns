@@ -66,6 +66,7 @@
     width: 100%;    
     margin: 0 auto;
     overflow: hidden;
+     min-width: 370px;
 }  
 
 .autora_map_and_list_wrapper {
@@ -74,6 +75,7 @@
     margin: 0 auto;
     overflow-y: scroll;
     border-top: 1px solid rgb(206, 206, 206);
+    min-width: 370px;
 }
 
 </style>

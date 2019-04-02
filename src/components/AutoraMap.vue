@@ -98,11 +98,13 @@ export default {
     width: 100%;
     border-radius: 5px;
     z-index: 50;
+     min-width: 370px;
 }
 
 .autora_map {
     width: 100%;
     height: 100vh;
+     min-width: 370px;
 }
 
 .result_container {

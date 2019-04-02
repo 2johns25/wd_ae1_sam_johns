@@ -63,6 +63,7 @@ export default {
     width: 100%;
     z-index: 9999;
     box-shadow: -1px 0px 10px 0px rgb(136, 136, 136);
+    min-width: 370px;
 }
 
 .autora_list {

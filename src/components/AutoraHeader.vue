@@ -90,6 +90,7 @@ export default {
 .header_wrapper {
     width: 100%;
     background-color: #2C5F9A;
+    min-width: 320px;
 }
 .header_container {
     width: 99%; 
