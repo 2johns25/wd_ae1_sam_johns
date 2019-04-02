@@ -24,7 +24,7 @@ and Axios, is necessary to retrieve data from the Autora API.
 
 If you don't want to create an account, you can sign in using:
 
-Username: *guest.user@example.com*
+Username: *guest.user@example.com*  
 Password: *guestuser12345*
 
 ## Run the project locally
