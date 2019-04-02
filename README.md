@@ -6,9 +6,6 @@ The London Sightseer site enables users to view and discover
 a variety of food establishments within London, including supermarkets, local shops,
 cafès and restaurants.
 
-A live preview of the site can be viewed here:
-``` https://wd-ae1-autora.firebaseapp.com/#/Login ```
-
 This site was designed and built by Sam Johns, during the final year of university
 at Solent University. This is for the Web Design (SWD600) unit, taught by Joe Appleton.
 
@@ -21,6 +18,14 @@ Firebase database. In addition to those, various other technologies were used to
 For example, Vue2Leaflet, is used to display maps, Vue Routers, are used to enable multiple pages,
 and Axios, is necessary to retrieve data from the Autora API.
 
+## Visit the hosted site
+
+**To see a live preview of the London Sightseer site, [Click here.](https://wd-ae1-autora.firebaseapp.com/#/Login)**
+
+If you don't want to create an account, you can sign in using:
+
+Username: *guest.user@example.com*
+Password: *guestuser12345*
 
 ## Run the project locally
 
