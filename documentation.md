@@ -143,14 +143,15 @@ Testing was carried out using the Chrome Developer Tools and Google Lighthouse. 
 
 ##### Test plan
 
-Feature    | Status (good, fair, poor)     | Comments
+Feature    | Status (good, fair, poor) | Comments
 --------|---------------------------|----------
-Navigation | FAIR | Specific navigation items are displayed based on whether or not a user is logged in and all                         links redirect the user to the corresponding pages.However, it would’ve been preferable to have                     the icon representing the currently viewed page, change colour.
+Navigation | FAIR | Specific navigation items are displayed based on whether or not a user is logged in and all                         links redirect the user to the corresponding pages.  However, it would’ve been preferable to                        have the icon representing the currently viewed page, change colour.
 Sign-in | GOOD | Users can sign-in with their email and password.
 Sign out | GOOD | Users can sign-out by clicking the corresponding navigation item.
 Sign up | GOOD | Users can sign-up by providing an email and password.
 Sign in error checking | FAIR | Users who provide the incorrect credentials or no credentials at all, receive an                                    error message. However, error messages could’ve been better designed and shown                                       within the form itself, rather than the whole page.
-
+Sign up error checking | FAIR | Users who provide two different email addresses, don’t provide any email addresses                                  or any passwords, receive an error message.  
+                                However, error messages could’ve been better designed and shown within the form itself, rather than the whole page.
 
 
 
