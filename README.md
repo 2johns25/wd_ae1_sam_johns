@@ -27,6 +27,8 @@ If you don't want to create an account, you can sign in using:
 Username: *guest.user@example.com*  
 Password: *guestuser12345*
 
+**IMPORTANT: press 'CMD + R' OR 'FN + F5' once you're on the app.** 
+
 ## Run the project locally
 
 1. Close this repository
