@@ -36,17 +36,17 @@ Project source files were set up, including required assets and dependencies.
 ##### Phase 4: Implementation
 To minimise the risks of errors occurring and being able to easily identify problems, the implementation phase is broken down into 4 sub-phases
 
-    ##### Phase 4.1 Structure
-    The overall structure of the SPA was built, including the header, navigation, authentication forms and other individual elements.
-        
-    ##### Phase 4.2 Logic
-    Once the web app’s structure was built and tested for responsiveness, the JavaScript and back-end functionality was implemented. 
+##### Phase 4.1 Structure
+The overall structure of the SPA was built, including the header, navigation, authentication forms and other individual elements.
+    
+##### Phase 4.2 Logic
+Once the web app’s structure was built and tested for responsiveness, the JavaScript and back-end functionality was implemented. 
 
-    ##### Phase 4.3 Design
-    Styling and design considerations such as colour, size and use of icons were added.
+##### Phase 4.3 Design
+Styling and design considerations such as colour, size and use of icons were added.
 
-    ##### Phase 4.4 Test
-    Initial functionality testing was conducted to check for bugs.
+##### Phase 4.4 Test
+Initial functionality testing was conducted to check for bugs.
 
 ##### Phase 5: Deployment
 The web application was deployed using the Firebase CLI tool.
@@ -57,8 +57,28 @@ Further functional testing was carried out in addition to automated testing usin
 ##### Phase 7: Evaluation
 An evaluation was provided based on the results from the testing.
 
-
 ### Techstack
+
+Below is a list of the tools and technologies that went into creating this web application.
+
+##### Development tools  
+VSCode  
+Git/GitHub  
+Chrome Developer Tools  
+NPM  
+Webpack  
+
+#### Front-end  
+Vue.JS (HTML, CSS, JavaScript)  
+
+#### Dependencies  
+Vue Router  
+Axios  
+Vue2-Leaflet  
+
+#### Back-end  
+Google’s Firebase and Firestore  
+
 
 ## Implementation
 
