@@ -4,6 +4,9 @@
 
 #### 12/04/2019
 
+The final solution can be accessed here: https://wd-ae1-autora.firebaseapp.com/
+The GitHub repo can be accessed here: https://github.com/2johns25/wd_ae1_sam_johns
+
 #
 
 ## Background
@@ -24,10 +27,10 @@ The GitHub repo can be accessed here: https://github.com/2johns25/wd_ae1_sam_joh
 
 For this project, due to time constraints and the need to adopt a “learn as you go” approach while developing, a custom linear workflow was used, which is comprised of seven main phases.
 
-##### Phase 1: Project specification
+* ##### Phase 1: Project specification
 Project specifications were gathered through a live presentation given by the Autoura API platform developer.
 
-##### Phase 2: Design
+    * ##### Phase 2: Design
 Initial designs in the form of simple digital wireframes were produced.
 
 ##### Phase 3: Set up
@@ -165,7 +168,7 @@ There was particular aspect of this project that was particularly challenging bu
 
 ### References
 
-ALSALEMI, A. et al., Jun 2017. Real-Time Communication Network Using Firebase Cloud IoT Platform for ECMO Simulation. 2017 IEEE International Conference on Internet of Things (iThings) and IEEE Green Computing and Communications (GreenCom) and IEEE Cyber, Physical and Social Computing (CPSCom) and IEEE Smart Data (SmartData). IEEE, pp.178-182  
+ALSALEMI, A. et al., Jun 2017. Real-Time Communication Network Using Firebase Cloud IoT Platform for ECMO Simulation. 2017 IEEE International Conference on Internet of Things (iThings) and IEEE Green Computing and Communications (GreenCom) and IEEE Cyber, Physical and Social Computing (CPSCom) and IEEE Smart Data (SmartData). IEEE, pp.178-182 from: https://ieeexplore.ieee.org/document/8276748  
 
 BAILEY, E.W., 2019. ARIA [viewed Apr 7, 2019]. Available from: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA  
 
