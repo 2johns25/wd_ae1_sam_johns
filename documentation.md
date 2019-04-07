@@ -139,20 +139,10 @@ The Firebase platform also provides a deployment and hosting solution, which is 
 
 #### Testing
 
-Testing was carried out using the Chrome Developer Tools and Google Lighthouse. Google Lighthouse conducts automated tests on a site and provides detailed results with scores on various aspects of a site, such as performance, PWA compliance, accessibility and SEO. Two tests were carried out on the LS site; firstly as a desktop connected to Wi-Fi and then as a mobile device using 3G. As well as automated tests, manual functionality tests were carried out to determine if all implemented features functioned correctly. Below is a completed test plan.
+Testing was carried out using the Chrome Developer Tools and Google Lighthouse. Google Lighthouse conducts automated tests on a site and provides detailed results with scores on various aspects of a site, such as performance, PWA compliance, accessibility and SEO. Two tests were carried out on the LS site; firstly as a desktop connected to Wi-Fi and then as a mobile device using 3G. As well as automated tests, manual functionality tests were carried out to determine if all implemented features functioned correctly. 
 
-##### Test plan
 
-Feature    | Status (good, fair, poor) | Comments
---------|---------------------------|----------
-Navigation | FAIR | Specific navigation items are displayed based on whether or not a user is logged in and all                         links redirect the user to the corresponding pages.  
-                    However, it would’ve been preferable to have the icon representing the currently viewed page, change colour.
-Sign-in | GOOD | Users can sign-in with their email and password.
-Sign out | GOOD | Users can sign-out by clicking the corresponding navigation item.
-Sign up | GOOD | Users can sign-up by providing an email and password.
-Sign in error checking | FAIR | Users who provide the incorrect credentials or no credentials at all, receive an                                    error message. However, error messages could’ve been better designed and shown                                       within the form itself, rather than the whole page.
-Sign up error checking | FAIR | Users who provide two different email addresses, don’t provide any email addresses                                  or any passwords, receive an error message.  
-                                However, error messages could’ve been better designed and shown within the form itself, rather than the whole page.
+Click this link to view the test plan: 
 
 
 
