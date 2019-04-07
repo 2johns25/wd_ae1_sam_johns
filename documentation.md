@@ -24,10 +24,10 @@ The resulting solution was a web application called London Sightseer, that enabl
 
 For this project, due to time constraints and the need to adopt a “learn as you go” approach while developing, a custom linear workflow was used, which is comprised of seven main phases.
 
-* ##### Phase 1: Project specification
+##### Phase 1: Project specification
 Project specifications were gathered through a live presentation given by the Autoura API platform developer.
 
- * ##### Phase 2: Design
+##### Phase 2: Design
 Initial designs in the form of simple digital wireframes were produced.
 
 ##### Phase 3: Set up
@@ -140,6 +140,11 @@ The Firebase platform also provides a deployment and hosting solution, which is 
 #### Testing
 
 Testing was carried out using the Chrome Developer Tools and Google Lighthouse. Google Lighthouse conducts automated tests on a site and provides detailed results with scores on various aspects of a site, such as performance, PWA compliance, accessibility and SEO. Two tests were carried out on the LS site; firstly as a desktop connected to Wi-Fi and then as a mobile device using 3G. As well as automated tests, manual functionality tests were carried out to determine if all implemented features functioned correctly. Below is a completed test plan.
+
+##### Test plan
+
+First header | Second header
+-------------|--------------
 
 ### Evaluation
 
