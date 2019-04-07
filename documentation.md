@@ -145,8 +145,7 @@ Testing was carried out using the Chrome Developer Tools and Google Lighthouse. 
 
 Feature | Status (good, fair, poor) | Comments
 --------|---------------------------|----------
-Navigation | FAIR | Specific navigation items are displayed based on whether or not a user is logged in and all                         links redirect the user to the corresponding pages.  
-                    However, it would’ve been preferable to have the icon representing the currently viewed page, change colour.
+Navigation | FAIR | Specific navigation items are displayed based on whether or not a user is logged in and all                         links redirect the user to the corresponding pages.However, it would’ve been preferable to have                     the icon representing the currently viewed page, change colour.
 
 
 
