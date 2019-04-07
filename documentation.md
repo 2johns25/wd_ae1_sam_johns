@@ -18,10 +18,6 @@ STC require a solution be implemented, enabling customers to interact with the A
 
 The resulting solution was a web application called London Sightseer, that enabled people to discover food establishments within London via a map and list of destinations. Using the site, users could visit individual food establishment own websites and favourite a particular food establishment, which would be seen by all other users, giving them an idea of what establishments were regarded as worthwhile.
 
-The final solution can be accessed here: https://wd-ae1-autora.firebaseapp.com/
-
-The GitHub repo can be accessed here: https://github.com/2johns25/wd_ae1_sam_johns
-
 ## Methods 
 
 ### Workflow
@@ -31,7 +27,7 @@ For this project, due to time constraints and the need to adopt a “learn as yo
 * ##### Phase 1: Project specification
 Project specifications were gathered through a live presentation given by the Autoura API platform developer.
 
-    * ##### Phase 2: Design
+ * ##### Phase 2: Design
 Initial designs in the form of simple digital wireframes were produced.
 
 ##### Phase 3: Set up
