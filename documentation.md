@@ -24,37 +24,37 @@ The GitHub repo can be accessed here: https://github.com/2johns25/wd_ae1_sam_joh
 
 For this project, due to time constraints and the need to adopt a “learn as you go” approach while developing, a custom linear workflow was used, which is comprised of seven main phases.
 
-###### Phase 1: Project specification
+##### Phase 1: Project specification
 Project specifications were gathered through a live presentation given by the Autoura API platform developer.
 
-###### Phase 2: Design
+##### Phase 2: Design
 Initial designs in the form of simple digital wireframes were produced.
 
-###### Phase 3: Set up
+##### Phase 3: Set up
 Project source files were set up, including required assets and dependencies.
 
-###### Phase 4: Implementation
+##### Phase 4: Implementation
 To minimise the risks of errors occurring and being able to easily identify problems, the implementation phase is broken down into 4 sub-phases
 
-###### Phase 4.1 Structure
-The overall structure of the SPA was built, including the header, navigation, authentication forms and other individual elements.
-	
-###### Phase 4.2 Logic
-Once the web app’s structure was built and tested for responsiveness, the JavaScript and back-end functionality was implemented. 
+    ##### Phase 4.1 Structure
+    The overall structure of the SPA was built, including the header, navigation, authentication forms and other individual elements.
+        
+    ##### Phase 4.2 Logic
+    Once the web app’s structure was built and tested for responsiveness, the JavaScript and back-end functionality was implemented. 
 
-###### Phase 4.3 Design
-Styling and design considerations such as colour, size and use of icons were added.
+    ##### Phase 4.3 Design
+    Styling and design considerations such as colour, size and use of icons were added.
 
-###### Phase 4.4 Test
-Initial functionality testing was conducted to check for bugs.
+    ##### Phase 4.4 Test
+    Initial functionality testing was conducted to check for bugs.
 
-###### Phase 5: Deployment
+##### Phase 5: Deployment
 The web application was deployed using the Firebase CLI tool.
 
-###### Phase 6: Testing
+##### Phase 6: Testing
 Further functional testing was carried out in addition to automated testing using Google Lighthouse.
 
-###### Phase 7: Evaluation
+##### Phase 7: Evaluation
 An evaluation was provided based on the results from the testing.
 
 
