@@ -143,8 +143,8 @@ Testing was carried out using the Chrome Developer Tools and Google Lighthouse. 
 
 ##### Test plan
 
-First header | Second header
--------------|--------------
+Feature | Status (good, fair, poor) | Comments
+--------|---------------------------|----------
 
 ### Evaluation
 
