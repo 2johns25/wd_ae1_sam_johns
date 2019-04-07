@@ -84,7 +84,7 @@ Google’s Firebase and Firestore
 
 ### Design
 
-The design of this web app was kept simplistic and clean, making it easy for people of all demographics to use. This was accomplished by incorporating the Don Norman Design Principles (visibility, feedback, affordance, mapping, consistency and constaints) ![(Rekhi, 2017)] (https://medium.com/@sachinrekhi/don-normans-principles-of-interaction-design-51025a2c0f33) and the Gestalt Design principles (proximity, closure, similarity, symmetry, asymmetry). (Gkogka, 2018). 
+The design of this web app was kept simplistic and clean, making it easy for people of all demographics to use. This was accomplished by incorporating the Don Norman Design Principles (visibility, feedback, affordance, mapping, consistency and constraints) [(Rekhi, 2017)] (https://medium.com/@sachinrekhi/don-normans-principles-of-interaction-design-51025a2c0f33) and the Gestalt Design principles (proximity, closure, similarity, symmetry, asymmetry). (Gkogka, 2018). 
 
 These design principles were implemented primarily through the use of colour, icons, font weights and text-decorations. For example, interactive elements such as buttons and links were coloured blue, which would change colour when they were hovered over or clicked. Similarly, links would become underlined, when they were hovered over. Icons were used to visually indicate to a user what a particular button would do. For example, the favourite button indicated that it would perform a particular action. Feedback could’ve been further advanced with some animations after user interaction, to indicate a state change.
 
