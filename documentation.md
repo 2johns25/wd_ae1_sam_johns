@@ -142,8 +142,7 @@ The Firebase platform also provides a deployment and hosting solution, which is 
 Testing was carried out using the Chrome Developer Tools and Google Lighthouse. Google Lighthouse conducts automated tests on a site and provides detailed results with scores on various aspects of a site, such as performance, PWA compliance, accessibility and SEO. Two tests were carried out on the LS site; firstly as a desktop connected to Wi-Fi and then as a mobile device using 3G. As well as automated tests, manual functionality tests were carried out to determine if all implemented features functioned correctly. 
 
 
-Click this link to view the test plan: 
-
+Click this link to view the test plan: https://github.com/2johns25/wd_ae1_sam_johns/blob/master/London%20Sightseer%20Test%20Plan.pdf
 
 
 ### Evaluation
