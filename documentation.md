@@ -50,17 +50,17 @@ The GitHub repo can be accessed here: https://github.com/2johns25/wd_ae1_sam_joh
 
 ### References
 
-ALSALEMI, A. et al., Jun 2017. Real-Time Communication Network Using Firebase Cloud IoT Platform for ECMO Simulation. 2017 IEEE International Conference on Internet of Things (iThings) and IEEE Green Computing and Communications (GreenCom) and IEEE Cyber, Physical and Social Computing (CPSCom) and IEEE Smart Data (SmartData). IEEE, pp.178-182
-BAILEY, E.W., 2019. ARIA [viewed Apr 7, 2019]. Available from: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA
-DAITYARI, S., 2019. Angular vs Vue vs React: Which Framework to Choose in 2019. In: CodeinWP. -01-10T14:36:33+00:00 [viewed Apr 4, 2019]. Available from: https://www.codeinwp.com/blog/angular-vs-vue-vs-react/
+ALSALEMI, A. et al., Jun 2017. Real-Time Communication Network Using Firebase Cloud IoT Platform for ECMO Simulation. 2017 IEEE International Conference on Internet of Things (iThings) and IEEE Green Computing and Communications (GreenCom) and IEEE Cyber, Physical and Social Computing (CPSCom) and IEEE Smart Data (SmartData). IEEE, pp.178-182  
+BAILEY, E.W., 2019. ARIA [viewed Apr 7, 2019]. Available from: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA  
+DAITYARI, S., 2019. Angular vs Vue vs React: Which Framework to Choose in 2019. In: CodeinWP. -01-10T14:36:33+00:00 [viewed Apr 4, 2019]. Available from: https://www.codeinwp.com/blog/angular-vs-vue-vs-react/  
 FRANKSTON, B., 2018. Progressive Web Apps. IEEE Consumer Electronics Magazine, March, 106-117
-GKOGKA, E., 2018. Gestalt principles in UI design.[viewed Apr 5, 2019]. Available from: https://medium.muz.li/gestalt-principles-in-ui-design-6b75a41e9965
-KOLLEGGER, E., 2018. What is Axios.js and why should I care? In: Eric Kollegger. -05-14T20:44:38.676Z [viewed Apr 4, 2019]. Available from: https://medium.com/@MinimalGhost/what-is-axios-js-and-why-should-i-care-7eb72b111dc0
-OSMANI, A., 2012. Learning javascript design patterns. Beijing [u.a.]: O'Reilly
-PANDE, N. et al., Jul 2018. Enhanced Web Application and Browsing Performance through Service-Worker Infusion Framework. 2018 IEEE International Conference on Web Services (ICWS). IEEE, pp.195-202
-REKHI, S., 2017. Don Norman’s Principles of Interaction Design. In: Medium.com. -01-23T17:33:23.822Z [viewed Apr 6, 2019]. Available from: https://medium.com/@sachinrekhi/don-normans-principles-of-interaction-design-51025a2c0f33
-SCHINDLER, J., 2013. Profiling and Analyzing the I/O Performance of NoSQL DBs. ACM SIGMETRICS/international conference on Measurement and modeling of computer systems. New York, NY, USA: ACM, pp.389–390
-TEMPRANO, V.G., 2016. Google Maps API or Leaflet: What's Best for your Project? | Codementor [viewed Apr 4, 2019]. Available from: https://www.codementor.io/victorgerardtemprano/google-maps-api-or-leaflet--what-s-best-for-your-project-faaev60vm
+GKOGKA, E., 2018. Gestalt principles in UI design.[viewed Apr 5, 2019]. Available from: https://medium.muz.li/gestalt-principles-in-ui-design-6b75a41e9965  
+KOLLEGGER, E., 2018. What is Axios.js and why should I care? In: Eric Kollegger. -05-14T20:44:38.676Z [viewed Apr 4, 2019]. Available from: https://medium.com/@MinimalGhost/what-is-axios-js-and-why-should-i-care-7eb72b111dc0  
+OSMANI, A., 2012. Learning javascript design patterns. Beijing [u.a.]: O'Reilly  
+PANDE, N. et al., Jul 2018. Enhanced Web Application and Browsing Performance through Service-Worker Infusion Framework. 2018 IEEE International Conference on Web Services (ICWS). IEEE, pp.195-202  
+REKHI, S., 2017. Don Norman’s Principles of Interaction Design. In: Medium.com. -01-23T17:33:23.822Z [viewed Apr 6, 2019]. Available from: https://medium.com/@sachinrekhi/don-normans-principles-of-interaction-design-51025a2c0f33  
+SCHINDLER, J., 2013. Profiling and Analyzing the I/O Performance of NoSQL DBs. ACM SIGMETRICS/international conference on Measurement and modeling of computer systems. New York, NY, USA: ACM, pp.389–390  
+TEMPRANO, V.G., 2016. Google Maps API or Leaflet: What's Best for your Project? | Codementor [viewed Apr 4, 2019]. Available from: https://www.codementor.io/victorgerardtemprano/google-maps-api-or-leaflet--what-s-best-for-your-project-faaev60vm  
 
 
 ### Bibliography
